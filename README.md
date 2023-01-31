@@ -18,7 +18,9 @@ PRIVATE_KEY=yourprivatekeywithsomefunds
 
 ## Deploy
 
-truffle migrate --network sapphire
+truffle migrate --network sapphire-testnet
+
+truffle migrate --network sapphire-mainnet
 
 ## Deployed
 

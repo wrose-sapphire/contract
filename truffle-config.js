@@ -90,9 +90,14 @@ module.exports = {
     //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
-    sapphire: {
+    sapphire-testnet: {
       host: "https://testnet.sapphire.oasis.dev",
       provider: sapphire.wrap(new HDWalletProvider([process.env.PRIVATE_KEY], "https://testnet.sapphire.oasis.dev")),
+      network_id: 0x5aff,
+    },
+    sapphire-mainnet: {
+      host: "https://sapphire.oasis.io",
+      provider: sapphire.wrap(new HDWalletProvider([process.env.PRIVATE_KEY], "https://sapphire.oasis.io")),
       network_id: 0x5aff,
     },
     //

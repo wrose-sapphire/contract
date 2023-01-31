@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@oasisprotocol/sapphire-paratime": "^1.0.5",
+    "@oasisprotocol/sapphire-paratime": "^1.0.14",
     "@truffle/hdwallet-provider": "^2.0.14",
     "dotenv": "^16.0.2"
   }
