@@ -2,7 +2,9 @@
 
 https://docs.oasis.io/dapp/sapphire/quickstart/
 
-https://testnet.explorer.sapphire.oasis.dev/address/0xC6C6A205ec3031E0C61ce2d0bd4A415C5509C1C0
+https://testnet.explorer.sapphire.oasis.dev/address/0xA75e40527A55a9eb0C08896C993B0CAdd5cDc18F
+
+https://explorer.sapphire.oasis.io/address/0xA75e40527A55a9eb0C08896C993B0CAdd5cDc18F
 
 ## Setup
 
