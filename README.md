@@ -31,13 +31,13 @@ truffle migrate --network sapphire-mainnet
 
    Deploying 'WROSE9'
    ------------------
-   > transaction hash:    0x3473156190b80c11da322590a2f694759b8bff1771bfab671a6d029984b9a0d0
+   > transaction hash:    0x50b348f1c026c5057291347a4f43f1bd7f5c45b4306d2e843d4ec7bd5c43442d
    > Blocks: 0            Seconds: 8
-   > contract address:    0xC6C6A205ec3031E0C61ce2d0bd4A415C5509C1C0
-   > block number:        10115
-   > block timestamp:     1665712765
-   > account:             0xe9EB72519D543a0D080450582235ee84c757FE95
-   > balance:             9.6929672
+   > contract address:    0xA75e40527A55a9eb0C08896C993B0CAdd5cDc18F
+   > block number:        86505
+   > block timestamp:     1675189747
+   > account:             0x0350B4622d1f3bEf86Cbc04d0d872CA26089D9fC
+   > balance:             14.8633796
    > gas used:            1316204 (0x14156c)
    > gas price:           100 gwei
    > value sent:          0 ETH
