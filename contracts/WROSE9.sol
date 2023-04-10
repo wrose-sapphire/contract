@@ -25,7 +25,7 @@ contract WROSE9 {
 
     mapping (address => uint)                       public  balanceOf;
     mapping (address => mapping (address => uint))  public  allowance;
-    mapping (address => uint256)                    public  replayNonce;
+    mapping (address => boolean)                    public  replayNonce;
 
     function() external payable {
         deposit();
