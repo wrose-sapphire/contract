@@ -11,7 +11,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity >=0.4.22 <0.6;
+pragma solidity 0.8.19;
 
 contract WROSE9 {
     string public name     = "Wrapped Sapphire Rose";
@@ -25,7 +25,7 @@ contract WROSE9 {
 
     mapping (address => uint)                       public  balanceOf;
     mapping (address => mapping (address => uint))  public  allowance;
-    mapping (address => boolean)                    public  replayNonce;
+    mapping (uint => bool)                          public  replay;
 
     function() external payable {
         deposit();
@@ -80,9 +80,9 @@ contract WROSE9 {
 
       require(balanceOf[signer] >= wad + reward, "Insufficient Balance");
       require(signer != address(0), "Signer is 0x0");
-      require(nonce == replayNonce[signer], "Incorrect Nonce");
+      require(replay[nonce] == false,"Nonce already used");
 
-      replayNonce[signer]++;
+      replay[nonce] = true;
       balanceOf[signer] -= wad + reward;
 
       to.transfer(wad);
