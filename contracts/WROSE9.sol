@@ -23,7 +23,7 @@ contract WROSE9 {
     event  Deposit(address indexed dst, uint wad);
     event  Withdrawal(address indexed src, uint wad);
 
-    mapping (address => uint)                       public  balanceOf;
+    mapping (address => uint)                       private _balanceOf; // private to preserve privacy
     mapping (address => mapping (address => uint))  public  allowance;
     mapping (uint => bool)                          public  replay;
 
@@ -31,12 +31,12 @@ contract WROSE9 {
         deposit();
     }
     function deposit() public payable {
-        balanceOf[msg.sender] += msg.value;
+        _balanceOf[msg.sender] += msg.value;
         emit Deposit(msg.sender, msg.value);
     }
     function withdraw(uint wad) public {
-        require(balanceOf[msg.sender] >= wad);
-        balanceOf[msg.sender] -= wad;
+        require(_balanceOf[msg.sender] >= wad);
+        _balanceOf[msg.sender] -= wad;
         msg.sender.transfer(wad);
         emit Withdrawal(msg.sender, wad);
     }
@@ -59,31 +59,36 @@ contract WROSE9 {
         public
         returns (bool)
     {
-        require(balanceOf[src] >= wad);
+        require(_balanceOf[src] >= wad);
 
         if (src != msg.sender && allowance[src][msg.sender] != uint(-1)) {
             require(allowance[src][msg.sender] >= wad);
             allowance[src][msg.sender] -= wad;
         }
 
-        balanceOf[src] -= wad;
-        balanceOf[dst] += wad;
+        _balanceOf[src] -= wad;
+        _balanceOf[dst] += wad;
 
         emit Transfer(src, dst, wad);
 
         return true;
     }
 
+    function balanceOf(address src) public view returns (uint) {
+      require(src == msg.sender, "Can only check your own balance");
+      return _balanceOf[msg.sender];
+    }
+
     function metaWithdraw(bytes memory signature, address payable to, uint256 wad, uint256 nonce, uint256 reward) public returns (bool) {
       bytes32 metaHash = metaWithdrawHash(to, wad, nonce, reward);
       address signer = getSigner(metaHash, signature);
 
-      require(balanceOf[signer] >= wad + reward, "Insufficient Balance");
+      require(_balanceOf[signer] >= wad + reward, "Insufficient Balance");
       require(signer != address(0), "Signer is 0x0");
       require(replay[nonce] == false,"Nonce already used");
 
       replay[nonce] = true;
-      balanceOf[signer] -= wad + reward;
+      _balanceOf[signer] -= wad + reward;
 
       to.transfer(wad);
       msg.sender.transfer(reward);
