@@ -29,7 +29,7 @@ truffle migrate --network sapphire-mainnet
 ```
 =====================
 
-   Deploying 'WROSE9'
+   Deploying 'WROSE'
    ------------------
    > transaction hash:    0x50b348f1c026c5057291347a4f43f1bd7f5c45b4306d2e843d4ec7bd5c43442d
    > Blocks: 0            Seconds: 8

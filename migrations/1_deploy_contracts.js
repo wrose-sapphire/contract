@@ -1,5 +1,5 @@
-const WROSE9 = artifacts.require("WROSE9");
+const WROSE = artifacts.require("WROSE");
 
 module.exports = function(deployer) {
-  deployer.deploy(WROSE9);
+  deployer.deploy(WROSE);
 };
