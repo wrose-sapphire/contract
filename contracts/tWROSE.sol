@@ -56,9 +56,9 @@ contract WROSE {
         returns (address)
     {
         // EIP721 domain type
-        string memory name = "WROSE";
+        string memory name = "tWROSE";
         string memory version = "1";
-        uint256 chainId = 23294;
+        uint256 chainId = 23295;
         address verifyingContract = address(this);
 
         // stringified types

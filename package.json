@@ -4,5 +4,10 @@
     "@openzeppelin/contracts": "^4.8.3",
     "@truffle/hdwallet-provider": "^2.0.14",
     "dotenv": "^16.0.2"
+  },
+  "scripts": {
+    "deploy-mainnet": "truffle migrate --network sapphire-mainnet --from 1 --to 1",
+    "deploy-testnet": "truffle migrate --network sapphire-testnet --from 2 --to 2",
+    "test": "truffle test"
   }
 }

@@ -2,10 +2,6 @@
 
 https://docs.oasis.io/dapp/sapphire/quickstart/
 
-https://testnet.explorer.sapphire.oasis.dev/address/0xA75e40527A55a9eb0C08896C993B0CAdd5cDc18F
-
-https://explorer.sapphire.oasis.io/address/0xA75e40527A55a9eb0C08896C993B0CAdd5cDc18F
-
 ## Setup
 
 npm i -g truffle
@@ -20,9 +16,9 @@ PRIVATE_KEY=yourprivatekeywithsomefunds
 
 ## Deploy
 
-truffle migrate --network sapphire-testnet
+`npm run deploy-testnet`
 
-truffle migrate --network sapphire-mainnet
+`npm run deploy-mainnet`
 
 ## Deployed
 
