@@ -1,13 +1,31 @@
 {
-  "devDependencies": {
-    "@oasisprotocol/sapphire-paratime": "^1.0.14",
-    "@openzeppelin/contracts": "^4.8.3",
-    "@truffle/hdwallet-provider": "^2.0.14",
-    "dotenv": "^16.0.2"
+  "name": "wrose-sapphire",
+  "version": "1.0.0",
+  "description": "https://docs.oasis.io/dapp/sapphire/quickstart/",
+  "homepage": "https://github.com/wrose-sapphire/contract#readme",
+  "bugs": {
+    "url": "https://github.com/wrose-sapphire/contract/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrose-sapphire/contract.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "main": "/src/WROSE.js",
+  "directories": {
+    "test": "test"
   },
   "scripts": {
     "deploy-mainnet": "truffle migrate --network sapphire-mainnet",
     "deploy-testnet": "truffle migrate --network sapphire-testnet",
     "test": "truffle test --network development"
+  },
+  "devDependencies": {
+    "@oasisprotocol/sapphire-paratime": "^1.0.14",
+    "@openzeppelin/contracts": "^4.8.3",
+    "@truffle/hdwallet-provider": "^2.0.14",
+    "dotenv": "^16.0.2",
+    "ethers": "^5.7.0"
   }
 }
