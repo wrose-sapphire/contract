@@ -1,8 +1,23 @@
 {
   "name": "wrose",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "https://docs.oasis.io/dapp/sapphire/quickstart/",
   "homepage": "https://github.com/wrose-sapphire/contract#readme",
+  "keywords": [
+    "oasis",
+    "sapphire",
+    "paratime",
+    "ethereum",
+    "solidity",
+    "truffle",
+    "openzeppelin",
+    "wrose",
+    "wrapped rose",
+    "ROSE",
+    "crypto",
+    "web3",
+    "privacy"
+  ],
   "bugs": {
     "url": "https://github.com/wrose-sapphire/contract/issues"
   },

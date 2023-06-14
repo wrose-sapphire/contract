@@ -1,8 +1,14 @@
 # WROSE
 
-Wrapped ROSE on Oasis Sapphire
+Wrapped ROSE on Oasis Sapphire enables sending ROSE while preserving privacy
+
+For dApp: https://wrose.io
+
+![](https://github.com/leon-do/celo.ink/assets/19412160/79079e68-16c6-482a-9a57-330f8e04ffdf)
 
 ## Getting Started
+
+WROSE class has all of the values needed to interact with contract
 
 ```js
 const WROSE = require("wrose");
@@ -11,7 +17,7 @@ const wrose = new WROSE({
   to: "0xeCf3a15c3c7a1256Dad6B11d226b8AE9185a106b", // address to send to
   value: "1000000000000000000", // value to send in wei
   nonce: "123123123", // random uint256
-  reward: "100000000", // value to reward in wei
+  reward: "10000000000000000", // value to reward in wei
   testnet: true, // optional
 });
 
@@ -19,6 +25,8 @@ console.log(wrose);
 ```
 
 ## Get Balance of WROSE
+
+Only the owner can get it's own balance.
 
 ```js
 const WROSE = require("wrose");
