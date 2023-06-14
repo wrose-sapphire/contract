@@ -37,9 +37,9 @@ contract("WROSE", (accounts) => {
       nonce: "1",
       reward: "100",
       testnet: false, // optional
-      verifyingContract: "0x0000000000000000000000000000000000000000", // optional
     });
     const signature = await wallet._signTypedData(wrose.domain, { Message: wrose.types.Message }, wrose.message);
-    assert.equal(signature, "0xcb095cbdb842be28f9f198905dfeb23aefb2415ae974743a6fc6c5747b3782131f7d325c319ca887506a26c4f608afe5849496a96a8e1b7598442505e12d02361b", "Signature should be equal");
+    assert.equal(wallet.address, "0xeCf3a15c3c7a1256Dad6B11d226b8AE9185a106b", "Address should be equal");
+    assert.equal(signature, "0x7f455402f51c5bc656f089385aa283bcf53cfd3211e3c6ca99fd357968cd2aa745bc9bda13310d62123d9e86a746dabfa09ff834b518040ffb8fcb863f302b751c", "Signature should be equal");
   });
 });
