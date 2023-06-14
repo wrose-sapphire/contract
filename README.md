@@ -78,7 +78,7 @@ const { ethers } = require("ethers");
   const signer = sapphire.wrap(new ethers.Wallet(PRIVATE_KEY).connect(ethers.getDefaultProvider(sapphire.NETWORKS.testnet.defaultGateway)));
   // connect to contract
   const contract = new ethers.Contract(wrose.domain.verifyingContract, wrose.abi, signer);
-  // wrap/deposit 1.23 ROSE to get  1.23 WROSE
+  // unwrap/withdraw 1.23 ROSE to get 1.23 WROSE
   const value = ethers.utils.parseEther("1.23");
   const receipt = await contract["withdraw"](value, { gasLimit: 100000 });
   console.log(receipt);
@@ -114,7 +114,6 @@ const { ethers } = require("ethers");
   // sign metawithdraw
   const PRIVATE_KEY = "a619fa475818f941c372f48e7aad7b426f3a8810cf97b4ce334c2119bdc89e2a";
   const signer = sapphire.wrap(new ethers.Wallet(PRIVATE_KEY)).connect(ethers.getDefaultProvider(sapphire.NETWORKS.testnet.defaultGateway));
-
   const signature = await signer._signTypedData(wrose.domain, { Message: wrose.types.Message }, wrose.message);
   console.log(signature);
 
